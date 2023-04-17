@@ -1,0 +1,18 @@
+#!/bin/sh
+echo "\t $ > Ejecutando update y upgrade..."
+sudo apt-get update && sudo apt-get upgrade
+echo "\t $ > Ejecutando full-upgrade..."
+sudo full-upgrade
+echo "\t $ > Instalando python3-pip..."
+sudo apt install python3-pip
+echo "\t $ > pip install twisted pyOpenSSL service_identity..."
+sudo pip install twisted pyOpenSSL
+sudo pip install service_identity
+echo "\t $ > Instalando Delorean..."
+cp -r Delorean/ /usr/share/
+echo "\t $ > Instalando sslstrip..."
+cp -r sslstrip/ /usr/share/
+echo "\t $ > Instalando arpspoof"
+sudo apt-get install dsniff
+echo "\t $ > Instalando manitmid..."
+cp manitmid /usr/bin/
